@@ -38,8 +38,8 @@ class NaiveBayes(object):
 
     def classify(self, trainData, trainlabels, features):
 
-        # 求label与feature同时发生的概率
-        P = []
+        # 最大化 后验概率的分子
+        P = []  # P中存放不同label对应的后验概率的分子的值
         set_labels = list(set(trainlabels))
         for y in set_labels:
             y_index = [i for i, label in enumerate(trainlabels) if label == y]  # labels中出现y值的所有数值的下标索引
